@@ -324,7 +324,7 @@ application package error get reported as part of compute node error as category
 
 ### UserError
 
-The possible cause of this error is usually user driven, for example: bad naming, download failures or missing packages. The error messages will help you to pin point the specific cause, for example: below error is caused by download failure which could be caused by wrong package resource download URL.
+The possible cause of this error is usually user driven, for example: bad naming, download failures, unpacking failure or missing packages. The error messages will help you to pin point the specific cause, for example: below error is caused due to missing application package reference.
 
 For example:
 
@@ -332,7 +332,7 @@ For example:
 
 ### ApplicationPackageError
 
-The possible cause of this error is the internal process failure caused when an unforseen circumstances got trigger while downloading, unpacking or collecting information about application package in use.
+The possible cause of this error is the internal process failure caused when an unforseen circumstances got trigger while downloading, unpacking or collecting information about application package in use, for example: below error is caused by download failure which could be caused by wrong package resource download URL.
 
 For example:
 
