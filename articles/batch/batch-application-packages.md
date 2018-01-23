@@ -310,11 +310,12 @@ foreach (ApplicationSummary app in applications)
 }
 ```
 ## Debugging
-Debugging node error helps in the weeding out of any possible issue which could be user code related or glitches to the initial package settings. Ideally, node will capture these errors and return them as part of node error or Task execution error info. To handle these errors, user code need to add error-handling code to your code or use tools like batch labs https://azure.github.io/BatchLabs/ and Batch explorer https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer.
+Debugging node error helps in weeding out of any possible issue which could be user code related or glitches to the initial package settings. Ideally, node will capture these errors and return them as part of node error or Task execution error info. To handle these errors, user code need to add error-handling code to your code or use tools like [BatchLabs](https://azure.github.io/BatchLabs/) and [BatchExplorer](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer).
 
-Please note: Error handling is detailed in this page with: https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#Error handling and the following page contains sample for handling BatchException : https://docs.microsoft.com/en-us/azure/batch/batch-dotnet-get-started  
-
-Connecting to compute node. https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#connecting-to-compute-nodes
+> [!TIP]
+> See [Error handling](batch-api-basics#Error handling) and the [Getting started page](batch-dotnet-get-started) for handling BatchExceptions samples.
+> Information about [Connecting to compute node](batch-api-basics#connecting-to-compute-nodes ).
+>
 
 application package error get reported as part of compute node error as category or part of execution information as schduling error. In either case the Error Details will be of 2 different types:
 
@@ -323,7 +324,7 @@ application package error get reported as part of compute node error as category
 
 ### UserError
 
-The possible cause of this error is usually user driven, for example: bad naming or missing packages 
+The possible cause of this error is usually user driven, for example: bad naming, download failures or missing packages. The error messages will help you to pi point the specific cause, for example: below error is caused by download failure which could be caused by wrong package resource download URL.
 
 For example:
 
@@ -331,12 +332,11 @@ For example:
 
 ### ApplicaitonPackageError
 
-The possible cause of this error is the internal process failure mechanism which gets triggered when an unforseen circumstances got trigger.
+The possible cause of this error is the internal process failure caused when an unforseen circumstances got trigger while downloading, unpacking or collecting information about application package in use.
 
 For example:
 
 ![ApplicaitonPackageError error details returned from node][14]
-	
 
 ## Wrap up
 With application packages, you can help your customers select the applications for their jobs and specify the exact version to use when processing jobs with your Batch-enabled service. You might also provide the ability for your customers to upload and track their own applications in your service.
@@ -376,4 +376,4 @@ With application packages, you can help your customers select the applications f
 [11]: ./media/batch-application-packages/app_pkg_11.png "Update package blade in Azure portal"
 [12]: ./media/batch-application-packages/app_pkg_12.png "Delete package confirmation dialog in Azure portal"
 [13]: ./media/batch-application-packages/app_pkg_13.png "Debugging pool level packages using batch explorer tool"
-[14]: ./media/batch-application-packages/app_pkg_14.png "Debugging task level packages using batch explorer tool"
+[14]: ./media/batch-application-packages/app_pkg_14.PNG "Debugging task level packages using batch explorer tool"
