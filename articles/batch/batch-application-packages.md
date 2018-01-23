@@ -309,6 +309,34 @@ foreach (ApplicationSummary app in applications)
     }
 }
 ```
+## Debugging
+Debugging node error helps in the weeding out of any possible issue which could be user code related or glitches to the initial package settings. Ideally, node will capture these errors and return them as part of node error or Task execution error info. To handle these errors, user code need to add error-handling code to your code or use tools like batch labs https://azure.github.io/BatchLabs/ and Batch explorer https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer.
+
+Please note: Error handling is detailed in this page with: https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#Error handling and the following page contains sample for handling BatchException : https://docs.microsoft.com/en-us/azure/batch/batch-dotnet-get-started  
+
+Connecting to compute node. https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#connecting-to-compute-nodes
+
+application package error get reported as part of compute node error as category or part of execution information as schduling error. In either case the Error Details will be of 2 different types:
+
+* ApplciationPackageReference error caused by UserError.
+* ApplicaitonPackageReference caused by Application package Internal error.
+
+### UserError
+
+The possible cause of this error is usually user driven, for example: bad naming or missing packages 
+
+For example:
+
+![UserError error details returned from node][13]
+
+### ApplicaitonPackageError
+
+The possible cause of this error is the internal process failure mechanism which gets triggered when an unforseen circumstances got trigger.
+
+For example:
+
+![ApplicaitonPackageError error details returned from node][14]
+	
 
 ## Wrap up
 With application packages, you can help your customers select the applications for their jobs and specify the exact version to use when processing jobs with your Batch-enabled service. You might also provide the ability for your customers to upload and track their own applications in your service.
@@ -347,3 +375,5 @@ With application packages, you can help your customers select the applications f
 [10]: ./media/batch-application-packages/app_pkg_10.png "Choose storage account blade in Azure portal"
 [11]: ./media/batch-application-packages/app_pkg_11.png "Update package blade in Azure portal"
 [12]: ./media/batch-application-packages/app_pkg_12.png "Delete package confirmation dialog in Azure portal"
+[13]: ./media/batch-application-packages/app_pkg_13.png "Debugging pool level packages using batch explorer tool"
+[14]: ./media/batch-application-packages/app_pkg_14.png "Debugging task level packages using batch explorer tool"
