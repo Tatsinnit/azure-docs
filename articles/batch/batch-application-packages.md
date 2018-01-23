@@ -313,7 +313,7 @@ foreach (ApplicationSummary app in applications)
 Debugging node error helps in weeding out of any possible issue which could be user code related or glitches to the initial package settings. Ideally, node will capture these errors and return them as part of node error or Task execution error info. To handle these errors, user code need to add error-handling code to your code or use tools like [BatchLabs](https://azure.github.io/BatchLabs/) and [BatchExplorer](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer).
 
 > [!TIP]
-> See [Error handling](batch-api-basics#Error handling) and the [Getting started page](batch-dotnet-get-started) for handling BatchExceptions samples.
+> See [Error handling](batch-api-basics.md#Error handling) and the [Getting started page](batch-dotnet-get-started) for handling BatchExceptions samples.
 > Information about [Connecting to compute node](batch-api-basics#connecting-to-compute-nodes ).
 >
 
