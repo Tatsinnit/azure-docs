@@ -310,7 +310,7 @@ foreach (ApplicationSummary app in applications)
 }
 ```
 ## Debugging
-Debugging node error helps in weeding out of any possible issue which could be user code related or glitches to the initial package settings. Ideally, node will capture these errors and return them as part of node error or Task execution error info. To handle these errors, user code need to add error-handling code to your code or use tools like [BatchLabs](https://azure.github.io/BatchLabs/) and [BatchExplorer](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer).
+Debugging node error helps in weeding out of any possible issue which could be user code related or glitches to the initial package settings. Ideally, node will capture these errors and return them as part of node error or Task execution error info. To handle these errors, user code need to add error-handling code or use tools like [BatchLabs](https://azure.github.io/BatchLabs/) and [BatchExplorer](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer).
 
 > [!TIP]
 > See [Error handling](batch-api-basics) and the [Getting started page](batch-dotnet-get-started) for handling BatchExceptions samples.
@@ -330,7 +330,7 @@ For example:
 
 ![UserError error details returned from node][14]
 
-### ApplicaitonPackageError
+### ApplicationPackageError
 
 The possible cause of this error is the internal process failure caused when an unforseen circumstances got trigger while downloading, unpacking or collecting information about application package in use.
 
