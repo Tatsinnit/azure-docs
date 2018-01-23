@@ -328,7 +328,7 @@ The possible cause of this error is usually user driven, for example: bad naming
 
 For example:
 
-![UserError error details returned from node][13]
+![UserError error details returned from node][14]
 
 ### ApplicaitonPackageError
 
@@ -336,7 +336,7 @@ The possible cause of this error is the internal process failure caused when an 
 
 For example:
 
-![ApplicaitonPackageError error details returned from node][14]
+![ApplicaitonPackageError error details returned from node][13]
 
 ## Wrap up
 With application packages, you can help your customers select the applications for their jobs and specify the exact version to use when processing jobs with your Batch-enabled service. You might also provide the ability for your customers to upload and track their own applications in your service.
